@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VI Дэлхийн нүүдэлчдийн наадам 2026 | Happy Trip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1763AF;
+    --blue-deep:#0B3868;
+    --blue-night:#082948;
+    --gold:#DB9A2C;
+    --ink:#0F2338;
+    --paper:#FAF9F6;
+    --paper-2:#F2EFE8;
+    --line:rgba(23,99,175,0.16);
+    --muted:#5A6B7E;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Golos Text', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:0 28px;}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(250,249,246,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand img{height:52px;width:auto;}
+  .nav-phone{font-family:'JetBrains Mono',monospace;font-size:0.9rem;color:var(--blue);border:1px solid var(--line);padding:9px 18px;border-radius:100px;text-decoration:none;transition:background .2s, border-color .2s;white-space:nowrap;}
+  .nav-phone:hover{background:rgba(23,99,175,0.08);border-color:var(--blue);}
+
+  /* Hero */
+  .hero{background:radial-gradient(ellipse 900px 500px at 85% -10%, rgba(219,154,44,0.18), transparent 60%), linear-gradient(180deg, var(--blue-night), var(--blue-deep) 70%, var(--blue));color:#fff;padding:70px 0 56px;position:relative;overflow:hidden;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+  .eyebrow::before{content:'';width:26px;height:1px;background:var(--gold);}
+  h1{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(2.1rem,5.6vw,3.7rem);line-height:1.06;margin:0 0 20px;letter-spacing:-0.01em;max-width:780px;}
+  h1 em{font-style:normal;color:var(--gold);}
+  .hero-sub{max-width:600px;font-size:1.06rem;color:rgba(255,255,255,0.82);margin:0 0 34px;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px;}
+  .btn{font-family:'Golos Text',sans-serif;font-weight:700;font-size:0.97rem;padding:15px 28px;border-radius:100px;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:transform .18s, box-shadow .18s;}
+  .btn-primary{background:var(--gold);color:var(--blue-night);box-shadow:0 8px 22px rgba(219,154,44,0.3);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(219,154,44,0.4);}
+  .btn-ghost{border:1px solid rgba(255,255,255,0.35);color:#fff;}
+  .btn-ghost:hover{background:rgba(255,255,255,0.1);border-color:#fff;}
+
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(255,255,255,0.18);border-radius:var(--radius);overflow:hidden;background:rgba(255,255,255,0.06);}
+  .stat{padding:20px 18px;border-right:1px solid rgba(255,255,255,0.18);}
+  .stat:last-child{border-right:none;}
+  .stat-label{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px;}
+  .stat-value{font-family:'Unbounded',sans-serif;font-weight:600;font-size:1.08rem;}
+  .stat-value.gold{color:var(--gold);}
+
+  @media (max-width:640px){.stat-row{grid-template-columns:1fr 1fr;}.stat{border-bottom:1px solid rgba(255,255,255,0.18);}.stat:nth-child(2){border-right:none;}.stat:nth-child(4){border-right:none;}}
+
+  /* Flourish divider — echoes the logo's wind-swirl mark */
+  .flourish{width:64px;height:40px;margin:0 auto;color:var(--blue);opacity:.55;}
+  .section-flourish{display:flex;justify-content:center;padding:36px 0 4px;}
+
+  section{padding:64px 0;}
+  .section-head{margin-bottom:40px;max-width:680px;}
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:0.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;}
+  h2{font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(1.5rem,3.2vw,2.2rem);margin:0;letter-spacing:-0.01em;color:var(--blue-night);}
+  .intro-text{color:var(--muted);font-size:1.02rem;margin-top:14px;}
+
+  /* Highlights grid */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media (max-width:800px){.grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.grid{grid-template-columns:1fr;}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;}
+  .card .ic{width:34px;height:34px;color:var(--blue);margin-bottom:14px;}
+  .card h3{font-family:'Unbounded',sans-serif;font-size:0.98rem;margin:0 0 8px;color:var(--blue-night);}
+  .card p{margin:0;color:var(--muted);font-size:0.9rem;}
+
+  /* Route */
+  .route-bar{display:flex;align-items:center;flex-wrap:wrap;gap:0;background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px;margin-top:6px;}
+  .route-stop{font-family:'JetBrains Mono',monospace;font-size:0.84rem;color:var(--blue-night);padding:10px 18px;white-space:nowrap;}
+  .route-arrow{color:var(--gold);padding:0 2px;}
+
+  /* Inclusions */
+  .incl-panel{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:36px;}
+  .incl-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:16px 28px;}
+  @media (max-width:640px){.incl-list{grid-template-columns:1fr;}}
+  .incl-list li{display:flex;gap:12px;align-items:flex-start;font-size:0.98rem;color:var(--ink);}
+  .incl-list li svg{width:20px;height:20px;flex-shrink:0;color:var(--blue);margin-top:2px;}
+
+  .note-panel{border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;background:#fff;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;margin-top:24px;}
+  .note-panel svg{width:26px;height:26px;flex-shrink:0;color:var(--gold);margin-top:2px;}
+  .note-panel p{margin:0;color:var(--muted);font-size:0.92rem;}
+
+  /* Footer */
+  footer{background:var(--blue-night);color:rgba(255,255,255,0.85);padding:52px 0 34px;margin-top:20px;}
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;}
+  .footer-brand img{height:44px;filter:brightness(0) invert(1);}
+  .footer-tag{color:rgba(255,255,255,0.55);font-size:0.9rem;margin-top:12px;max-width:320px;}
+  .footer-contact{font-family:'JetBrains Mono',monospace;font-size:0.92rem;line-height:2;color:var(--gold);}
+  .footer-contact a{text-decoration:none;}
+  .footer-bottom{margin-top:36px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.14);font-size:0.76rem;color:rgba(255,255,255,0.45);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><img src="happy-trip-logo-trip_blue.png" alt="Happy Trip"></div>
+    <a class="nav-phone" href="tel:89080839">☎ 8908-0839</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">VI Дэлхийн нүүдэлчдийн наадам · 2026</div>
+      <h1>Нүүдэлчин ард түмний <em>эр зориг, хурд хүчийг</em> нэгэн дороос мэдрэ</h1>
+      <p class="hero-sub">Киргизстан улсын Бишкек хот болон үзэсгэлэнт Иссык-Күлийн эрэгт зохион байгуулагдах дэлхийн хэмжээний нүүдэлчдийн наадмыг Happy Trip-тэй хамт үзээрэй.</p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:89080839">Даруй захиалах →</a>
+        <a class="btn btn-ghost" href="#included">Багцад юу орсныг харах</a>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat"><div class="stat-label">Хугацаа</div><div class="stat-value">7 шөнө 8 өдөр</div></div>
+        <div class="stat"><div class="stat-label">Огноо</div><div class="stat-value">2026.08.30 – 09.06</div></div>
+        <div class="stat"><div class="stat-label">Аяллын төлбөр</div><div class="stat-value gold">5,189,000₮</div></div>
+        <div class="stat"><div class="stat-label">Утас / Viber</div><div class="stat-value">8908-0839</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-flourish">
+    <svg class="flourish" viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 8c6 6 14 6 18 0M20 8c-3-4-1-8 3-6 3 1.5 1 5-2 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M62 32c-6-6-14-6-18 0M44 32c3 4 1 8-3 6-3-1.5-1-5 2-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <section id="route">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Маршрут</div>
+        <h2>Алмата — Бишкек — Чолпон-Ата — Иссык-Күль</h2>
+        <p class="intro-text">VI Дэлхийн нүүдэлчдийн наадам Бишкек хот болон Иссык-Күлийн эрэг дэх Кырчын хавцалд зохион байгуулагдана. Чолпон-Атагийн ипподромд морин спортын сүр хүчийг мэдэрч, Кырчын этно хотхонд дэлхийн нүүдэлчин ард түмнүүдийн өв соёлтой танилцах ховорхон боломж.</p>
+      </div>
+      <div class="route-bar">
+        <span class="route-stop">Улаанбаатар</span><span class="route-arrow">→</span>
+        <span class="route-stop">Алмата</span><span class="route-arrow">→</span>
+        <span class="route-stop">Бишкек</span><span class="route-arrow">→</span>
+        <span class="route-stop">Чолпон-Ата</span><span class="route-arrow">→</span>
+        <span class="route-stop">Иссык-Күль</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="program">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Хөтөлбөр</div>
+        <h2>Наадмын үеэр юу үзэх вэ</h2>
+        <p class="intro-text">Нэг бол зүгээр нэг аялал биш — нүүдэлчдийн ертөнцөөр аялах мартагдашгүй дурсамж юм.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18c2-6 6-9 8-9s6 3 8 9M8 18h8M12 4v5"/></svg>
+          <h3>Кок-бору ба хурдан морины уралдаан</h3>
+          <p>Нүүдэлчдийн хамгийн эрч хүчтэй морин спортын үзүүлбэрүүд.</p>
+        </div>
+        <div class="card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20 20 4M20 4h-6M20 4v6"/></svg>
+          <h3>Морьт сур харваа</h3>
+          <p>Үндэсний харвааны төрлүүдийг морин дээрээс гүйцэтгэнэ.</p>
+        </div>
+        <div class="card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c3 3 3 7 0 10-3-3-3-7 0-10ZM12 13v8M8 21h8"/></svg>
+          <h3>Бүргэдээр ан хийх үзүүлбэр</h3>
+          <p>Тэнгэр уулын өвөрт бүргэдчдийн уламжлалт ан хийх урлагийг харна.</p>
+        </div>
+        <div class="card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17c3-8 15-8 18 0M7 17l-2 3M17 17l2 3"/></svg>
+          <h3>Тайган нохойн уралдаан</h3>
+          <p>Нүүдэлчдийн уламжлалт агнуурын нохойн зэрлэг хурдыг үзнэ.</p>
+        </div>
+        <div class="card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="4"/><path d="M6 21c1-4 4-6 6-6s5 2 6 6"/></svg>
+          <h3>Үндэсний бөх ба хүчний тэмцээн</h3>
+          <p>Эр эрийн гурван наадмын өв уламжлал болсон тэмцээнүүд.</p>
+        </div>
+        <div class="card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V10l8-6 8 6v11M9 21v-6h6v6"/></svg>
+          <h3>Кырчын хавцлын этно хотхон</h3>
+          <p>Дэлхийн нүүдэлчин ард түмнүүдийн гэр, ахуй, өв соёлтой танилцана.</p>
+        </div>
+        <div class="card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18V5l12-2v13M9 9l12-2M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM18 19a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+          <h3>Үндэсний урлаг, дуу хөгжим</h3>
+          <p>Соёлын тоглолт, уламжлалт хөгжмийн үдэшлэгүүд.</p>
+        </div>
+        <div class="card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8h16M4 8l2 10h12l2-10M9 8V5a3 3 0 0 1 6 0v3"/></svg>
+          <h3>Гар урлал ба үндэсний хувцас</h3>
+          <p>Уламжлалт ахуй, гар урлалын дэлгэцийг үзэж, худалдан авалт хийнэ.</p>
+        </div>
+        <div class="card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 15c4-8 8-11 12-11 3 6 3 12-2 17-5-1-8-3-10-6Z"/></svg>
+          <h3>Тэнгэр уул ба цэнхэр Иссык-Күль</h3>
+          <p>Дэлхийн хоёр дахь том цэнгэг уур амьсгалтай нуурын сүр хүчийг мэдэрнэ.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-flourish">
+    <svg class="flourish" viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 8c6 6 14 6 18 0M20 8c-3-4-1-8 3-6 3 1.5 1 5-2 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M62 32c-6-6-14-6-18 0M44 32c3 4 1 8-3 6-3-1.5-1-5 2-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <section id="included">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Багцад юу орсон бэ</div>
+        <h2>Аяллын багцад багтсан үйлчилгээ</h2>
+      </div>
+      <div class="incl-panel">
+        <ul class="incl-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> УБ – Алмата – УБ чиглэлийн 2 талын нислэгийн тийз</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Зочид буудлын орой (7 шөнө)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Алмата, Бишкек хотууд дахь зочид буудал</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Хот хооронд болон хот доторх тээвэр</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Тосох ба үдэх үйлчилгээ</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Туршлагатай Монгол хөтөч, орчуулагч</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Аяллын даатгал</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Наадмын арга хэмжээ, ипподром, этно хотхонд орох эрх</li>
+        </ul>
+      </div>
+
+      <div class="note-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 9v4M12 16.5h.01M10.3 3.9 1.8 18.5a1.6 1.6 0 0 0 1.4 2.5h17.6a1.6 1.6 0 0 0 1.4-2.5L13.7 3.9a1.6 1.6 0 0 0-2.8 0Z"/></svg>
+        <p>Суудлын тоо хязгаартай тул аяллын захиалгаа эрт баталгаажуулаарай. Дэлгэрэнгүй мэдээлэл болон захиалгыг чатаар авна.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="happy-trip-logo-trip_blue.png" alt="Happy Trip">
+        <p class="footer-tag">VI Дэлхийн нүүдэлчдийн наадам 2026 — Happy Trip-ийн албан ёсны аяллын багц.</p>
+      </div>
+      <div class="footer-contact">
+        <div>☎ Утас/Viber: <a href="tel:89080839">8908-0839</a></div>
+        <div>✉ <a href="mailto:happytripmongolia@gmail.com">happytripmongolia@gmail.com</a></div>
+        <div>📍 1-р сургуулийн урд, Чонон Бүрт төв, 3 давхар, 315 тоот</div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Happy Trip Mongolia. Бүх эрх хуулиар хамгаалагдсан.</div>
+  </div>
+</footer>
+
+</body>
+</html>
